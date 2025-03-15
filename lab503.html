@@ -1,9 +1,85 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>My lab 5 web page</title>
     <style>
-      
+      body {width: 100%;
+           background-color: #f0e1bd}
+      #page {
+        width: 75%;
+        text-align: left;
+        margin: 0px, auto;
+        padding: 10px, auto;
+        }
+      #header{
+        font-family: times;
+        font-size: 20px;
+        font: #362e1b;
+        text-transform: uppercase;
+      }
+      #intro{
+        font-family: times;
+        font-size: 16px;
+        font-color: #911728;
+      }
+      #photo{
+        background-color: #ffffff;
+        margin-left: auto;
+        margin-right: 0;
+        float: right;
+        width: 250px;
+        padding: 10px;
+      }
+      #salmonphoto{
+        height: auto;
+        width: 240px;
+        border: 2px dashed #65855a;
+        border-radius: 10px 5px;
+        padding: 2px;
+        display: block;
+        margin: auto;
+      }
+      .caption{
+        font-size: 16px;
+        font-family: Times;
+        text-align: center;
+      }
+      td, li {
+        font-size: 16px;
+        font-family: Times;}
+      a {
+        text-decoration: none;}
+      a:link {background-color: #5596e6;}
+      a:visited {background-color: #a2a5a8;}
+      a:hover {background-color: #b5b5b5;}
+      #recipe{
+        width: 75%;
+        font-family: Times;
+        border-collapse: collapse;
+      }
+      #recipe th, #recipe td{
+        border: 1px solid #000000;
+        padding: 10px;
+      }
+      #recipe th{
+        font: black bold Verdana;
+        background-color: #65855a;
+        padidng-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+      }
+      tr.odd{
+        background-color: #b5d6a9;
+      }
+      #steps{
+        list-style-type: upper-roman;
+        font-family: Times;
+        font-style: italic;
+        font-size: 20px;
+      }
     </style>
   </head>
   <body>
@@ -20,7 +96,7 @@
     </div>
       
     <div id="photo">
-      <img src="teriyakiSalmonSmall.jpg" alt="Photo of teriyaki salmon with rice." />
+      <img id="salmonphoto" src="teriyakiSalmonSmall.jpg" alt="Photo of teriyaki salmon with rice." />
       <p class="caption">Teriyaki Salmon</p>
       <p class="caption">Photo by Rachel Sadler</p>
     </div>
@@ -39,7 +115,7 @@
           <td>Garlic</td>
           <td>1 Tbsp minced</td>
         </tr>
-        <tr>
+        <tr class="odd">
           <td>Red pepper flakes</td>
           <td>1 tsp</td>
         </tr>
@@ -47,7 +123,7 @@
           <td>Soy sauce</td>
           <td>1/2 cup</td>
         </tr>
-         <tr>
+         <tr class="odd">
           <td>Teriyaki sauce</td>
           <td>1/2 cup</td>
         </tr>
@@ -55,7 +131,7 @@
           <td>Olive oil</td>
           <td>2 tsp</td>
         </tr>
-         <tr>
+         <tr class="odd">
           <td>Green onions</td>
           <td>1/2 cup chopped</td>
         </tr>
@@ -63,7 +139,7 @@
           <td>Corn starch</td>
           <td>1 Tbsp</td>
         </tr>
-         <tr>
+         <tr class="odd">
           <td>Salmon</td>
           <td>4 fillets</td>
         </tr>
