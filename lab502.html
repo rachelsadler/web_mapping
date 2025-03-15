@@ -3,7 +3,78 @@
   <head>
     <title>My lab 5 web page</title>
     <style>
-      
+      body {width: 100%;
+           background-color: #e6d4aa}
+      #page {
+        width: 75%;
+        text-align: left;
+        margin: 5px, auto;
+        }
+      #header{
+        font-family: times;
+        font-size: 30px;
+        font-color: #12100b;
+      }
+      #intro{
+        font-family: times;
+        font-size: 16px;
+        font-color: #12100b;
+      }
+      #photo{
+        background-color: #efefef;
+        margin-left: auto;
+        margin-right: 0;
+        float: right;
+        width: 250px;
+        padding: 10px;
+      }
+      #salmonphoto{
+        height: auto;
+        width: 225px;
+        border: 2px dotted #000000;
+        border-radius: 5px 5px;
+        padding: 10px;
+        display: block;
+        margin: auto;
+      }
+      .caption{
+        font-size: 10px;
+        font-family: Arial, sanserif;
+        text-align: left;
+      }
+      p, td, li {
+        font-size: 10px;
+        font-family: Arial, sanserif;
+      }
+      h1, h2, h3, h4, h5, h6{
+        font-family: Arial, sanserif;
+        background-color: #dbd2ab;
+      }
+      a {
+        text-decoration: none;}\
+      a:link {background-color: #5596e6;}
+      a:visited {background-color: #a2a5a8;}
+      a:hover {background-color: #7be0cb;}
+      #recipe{
+        width: 100%;
+        font-family: Verdana, sanserif;
+        border-collapse: collapse;
+      }
+      #recipe th, #recipe td{
+        border: 1px solid ##cccaca;
+        padding: 10px;
+      }
+      #recipe th{
+        font: black bold Verdana;
+        background-color: #e4e8ca;
+        padidng-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        color: black;
+      }
+      #steps{
+        background-color: #8f9c99;
+      }
     </style>
   </head>
   <body>
@@ -20,7 +91,7 @@
     </div>
       
     <div id="photo">
-      <img src="teriyakiSalmonSmall.jpg" alt="Photo of teriyaki salmon with rice." />
+      <img id="salmonphoto" src="teriyakiSalmonSmall.jpg" alt="Photo of teriyaki salmon with rice." />
       <p class="caption">Teriyaki Salmon</p>
       <p class="caption">Photo by Rachel Sadler</p>
     </div>
