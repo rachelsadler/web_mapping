@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My lab 6 web page</title>
+    <style>
+      body {width: 100%;
+           background-color: #f0e1bd}
+      #page {
+        width: 75%;
+        text-align: left;
+        margin: 0px, auto;
+        padding: 10px, auto;
+        }
+      #header{
+        font-family: times;
+        font-size: 20px;
+        font: #362e1b;
+        text-transform: uppercase;
+      }
+      #intro{
+        font-family: times;
+        font-size: 16px;
+        font-color: #911728;
+      }
+      #photo{
+        background-color: #ffffff;
+        margin-left: auto;
+        margin-right: 0;
+        float: right;
+        width: 250px;
+        padding: 10px;
+      }
+      #salmonphoto{
+        height: auto;
+        width: 240px;
+        border: 2px dashed #65855a;
+        border-radius: 10px 5px;
+        padding: 2px;
+        display: block;
+        margin: auto;
+      }
+      .caption{
+        font-size: 16px;
+        font-family: Times;
+        text-align: center;
+      }
+      td, li {
+        font-size: 16px;
+        font-family: Times;}
+      a {
+        text-decoration: none;}
+      a:link {background-color: #5596e6;}
+      a:visited {background-color: #a2a5a8;}
+      a:hover {background-color: #b5b5b5;}
+      #recipe{
+        width: 75%;
+        font-family: Times;
+        border-collapse: collapse;
+      }
+      #recipe th, #recipe td{
+        border: 1px solid #000000;
+        padding: 10px;
+      }
+      #recipe th{
+        font: black bold Verdana;
+        background-color: #65855a;
+        padidng-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+      }
+      #steps{
+        list-style-type: upper-roman;
+        font-family: Times;
+        font-style: italic;
+        font-size: 20px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script>
+      $(document).ready( function() {
+      //putting my javascript code here
+        $("#showButton").click( function(){
+          console.log("someone clicked showButton.");
+          
+          $("img").show(); //"img" selects all images on the webpage
+        });
+        
+        $("#hideButton").click( function(){
+          console.log("someone clicked hideButton.");
+          
+          $("img").hide();
+        });
+      });
+      
+    </script>
+  </head>
+  <body>
+    <div id="page">   
+      <div id="header">
+        <h1>My lab 6 web page!</h1>
+        <p>This is the 6<sup>th</sup> lab for GIS 3410, web mapping, for MSU Denver.</p>
+        <hr />
+      </div>
+      
+    <div id="intro">
+      <h3>One of my favorite recipes: Teriyaki Salmon</h3>
+      <p>This is a recipe I have found and adapted from <a href="https://simplyhomecooked.com/grilled-teriyaki-salmon/">Simply Home Cooked</a>.</p>
+    </div>
+      
+    <div id="photo">
+      <img id="salmonphoto" src="teriyakiSalmonSmall.jpg" alt="Photo of teriyaki salmon with rice." />
+      <p class="caption">Teriyaki Salmon</p>
+      <p class="caption">Photo by Rachel Sadler</p>
+    </div>
+
+    <button id="showButton">Click to hide photo</button>
+    <button id="hideButton">Click to show photo</button>
+      
+     <h4>Recipe</h4>
+      <table id="recipe">
+        <tr>
+          <th>Ingredient</th>
+          <th>Quantity</th>
+       </tr>
+        <tr>
+          <td>Brown sugar</td>
+          <td>1/2 cup</td>
+        </tr>
+        <tr>
+          <td>Garlic</td>
+          <td>1 Tbsp minced</td>
+        </tr>
+        <tr>
+          <td>Red pepper flakes</td>
+          <td>1 tsp</td>
+        </tr>
+        <tr>
+          <td>Soy sauce</td>
+          <td>1/2 cup</td>
+        </tr>
+         <tr>
+          <td>Teriyaki sauce</td>
+          <td>1/2 cup</td>
+        </tr>
+         <tr>
+          <td>Olive oil</td>
+          <td>2 tsp</td>
+        </tr>
+         <tr>
+          <td>Green onions</td>
+          <td>1/2 cup chopped</td>
+        </tr>
+         <tr>
+          <td>Corn starch</td>
+          <td>1 Tbsp</td>
+        </tr>
+         <tr>
+          <td>Salmon</td>
+          <td>4 fillets</td>
+        </tr>
+      </table>
+      
+   <div id="steps"> 
+    <h4>Steps</h4>
+    <ol>
+      <li>In a bowl, combine brown sugar, garlic, soy sauce, teriyaki sauce, and red pepper flakes. Set aside 1/2 cup in a small sauce pan.</li>
+      <li>In the bowl add the olive oil and chopped green onion.</li>
+      <li>Place the salmon fillets in a container with a lid and pour the bowl with the marinade into the container. Put the lid on and store in the fridge for 30 minutes.</li>
+      <li>Mix the 1 Tbsp of corn starch with 1 Tbsp of water in a small bowl. Once this has combined, add it to the 1/2 cup of marinade in the small sauce pan. Cook on medium-low heat, stirring contantly, until it begins to thicken into a glaze.</li>
+      <li>After the salmon has been marinating for 30 minutes, cook the salmon in an air fryer at 400 degree fahrenheit for 8 minutes.</li>
+      <li>When the salmon is done, serve with glaze and enjoy!</li>
+    </ol>
+   </div>
+      
+    </div>
+  </body>
+</html>
