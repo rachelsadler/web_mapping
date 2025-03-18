@@ -93,6 +93,11 @@
           
           $("img").hide();
         });
+
+        $("#appear").click( function(){
+          console.log("someone clicked on appear button.");
+          $("#hidden_note").text("This marinade can be used with other types of meat. My favorite is using it with chicken. With chicken, it can soak in the marinade for 30 minutes to an hour without becoming too salty.");
+        });
       });
       
     </script>
@@ -116,8 +121,8 @@
       <p class="caption">Photo by Rachel Sadler</p>
     </div>
 
-    <button id="showButton">Click to hide photo</button>
-    <button id="hideButton">Click to show photo</button>
+    <button id="showButton">Click to show photo</button>
+    <button id="hideButton">Click to hide photo</button>
       
      <h4>Recipe</h4>
       <table id="recipe">
@@ -174,7 +179,10 @@
       <li>When the salmon is done, serve with glaze and enjoy!</li>
     </ol>
    </div>
-      
+
+     <div id="hidden_note">
+       <button id="appear">Click to see recipe notes</button>
+     </div>  
     </div>
   </body>
 </html>
