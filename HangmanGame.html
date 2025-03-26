@@ -13,17 +13,13 @@
               font-color: red;
               background-color: yellow; 
             }
-      #photo{
-        margin-left: auto;
-        margin-right: 0;
-        float: right;
-      }
+     
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
          $(document).ready( function() {
              // hide pictures
-             // $("img").hide();
+             $("img").hide();
            
              // this is the secret word!
               word =  "y o u r w o r d";
@@ -77,6 +73,7 @@
                       if (tries < 1) {
                         gameLost = true;
                         $("#info").text("Sorry, no more guesses left. You lose!");
+                        $("#loserPhoto").show();
                       }
                     
                     
@@ -105,6 +102,7 @@
                       if (!blank.includes("-")) {
                         gameWon  = true;
                         $("#info").text("Congrats, YOU WON!");
+                        $("#winnerPhoto").show();
                       }
                         
 
