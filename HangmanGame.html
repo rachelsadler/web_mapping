@@ -5,7 +5,7 @@
     <style>
       #alphabet { margin: auto;
                   padding: 20px; }
-      #word { margin: auto;
+      #key { margin: auto;
               font: 400em serif bold;
               padding: 20px;
             }
@@ -22,9 +22,9 @@
              $("img").hide();
            
              // this is the secret word!
-              word =  "u n c o n f o r m i t i e s";
-              blank = "- - - - - - - - - - - - - -";
-              $("#word").text(blank);
+              key =  "u n c o n f o r m i t i e s";
+              empty = "- - - - - - - - - - - - - -";
+              $("#key").text(empty);
 
               // this is the list of letters that have been tried
               triedLetters = "";
@@ -61,9 +61,9 @@
                     if (triedLetters.includes(letter)) {
                       $("#info").text("Letter " + letter + " has already been tried.");
 
-                    // if the letter isn't in the word (! for this), reduce
+                    // if the letter isn't in the key (! for this), reduce
                     // the number of tries and check if they lost
-                    } else if (! word.includes(letter)) {
+                    } else if (! key.includes(letter)) {
 
                       // reduce the number of remaining tries by 1
                       tries = tries - 1;
@@ -82,24 +82,24 @@
                     // and check if the player won or lost
                     } else {
 
-                      // replace the blanks in the blanks variable 
+                      // replace the blanks in the emptys variable 
                       // with the letter that was clicked on
-                      // replace the blanks with letter in blank
-                      // and replace the letters with blanks in word
-                      while (word.includes(letter)) {
-                        index = word.indexOf(letter);
-                        console.log("index of word is " + index);
-                        word = word.substring(0, index) + " " + word.substring((index + 1));
-                        blank = blank.substring(0, index) + letter + blank.substring((index + 1));
+                      // replace the blanks with letter in empty
+                      // and replace the letters with blanks in key
+                      while (key.includes(letter)) {
+                        index = key.indexOf(letter);
+                        console.log("index of key is " + index);
+                        key = key.substring(0, index) + " " + key.substring((index + 1));
+                        empty = empty.substring(0, index) + letter + empty.substring((index + 1));
 
-                        $("#word").text(blank);
-                        console.log("word is ", word);
-                        console.log("blank is ", blank);
+                        $("#key").text(empty);
+                        console.log("key is ", key);
+                        console.log("empty is ", empty);
                       }
 
                      
                       // check if the player has won the game
-                      if (!blank.includes("-")) {
+                      if (!empty.includes("-")) {
                         gameWon  = true;
                         $("#info").text("Congrats, YOU WON!");
                         $("#winnerPhoto").show();
@@ -111,7 +111,7 @@
                     // add the letter to letters already tried
                     triedLetters = triedLetters + letter;
                     console.log("triedLetter is: ", triedLetters);
-                    console.log("word is ", word);
+                    console.log("key is ", key);
                     
 
                   }
@@ -131,7 +131,7 @@
        <img id="winnerPhoto" src="winner.png" alt="Winner graphic" />
        <img id="loserPhoto" src="lose.png" alt="You Lose graphic" />
     </div>
-     <div id="word"></div>
+     <div id="key"></div>
      <div id="alphabet"><p>Click to make a guess!</p>
      <span class="letter" id="a">a</span>
      <span class="letter" id="b">b</span>
