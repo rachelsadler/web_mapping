@@ -84,7 +84,7 @@
                         index = word.indexOf(letter);
                         console.log("index of word is " + index);
                         word = word.substring(0, index) + " " + word.substring((index + 1));
-                        blank = word.substring(0, index) + letter + word.substring((index + 1));
+                        blank = blank.substring(0, index) + letter + blank.substring((index + 1));
 
                         $("#word").text(blank);
                         console.log("word is ", word);
