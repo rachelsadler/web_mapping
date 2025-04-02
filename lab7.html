@@ -30,16 +30,16 @@
       <div id="map"></div>
     </div>
     <script>
-      var map = L.map('map').setView([38.922281, -104.834421], 13);
+      var map = L.map('map').setView([38.922, -104.834], 13);
       
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
       
-      var marker = L.marker([38.922077, -104.827603]).addTo(map);
+      var marker = L.marker([38.922, -104.827]).addTo(map);
 
-      var circle = L.circle(38.916222, -104.856838], {
+      var circle = L.circle(38.916, -104.857], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
@@ -47,10 +47,10 @@
         }).addTo(map);
 
       var polygon = L.polygon([
-        [38.918767, -104.812343],
-        [38.919073, -104.802341],
-        [38.914415, -104.804898],
-        [38.913699, -104.812783]
+        [38.919, -104.812],
+        [38.919, -104.802],
+        [38.914, -104.805],
+        [38.914, -104.813]
         ]).addTo(map);
 
       //marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
@@ -59,7 +59,7 @@
       polygon.bindPopup("This is Pulpit Rock. With just a quick 15 minute hike, many people will have pizza delivered here!");
 
       var popup = L.popup()
-        .setLatLng([38.925308, -104.857034])
+        .setLatLng([38.925, -104.857])
         .setContent("This is a great trailhead. However, parking is very limited so go early!")
         .openOn(map);
 
