@@ -36,8 +36,6 @@
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
-      
-      var marker = L.marker([38.918, -104.842]).addTo(map);
 
       var marker2 = L.marker([38.925, -104.857]).addTo(map);
 
@@ -75,7 +73,6 @@
              color: 'red', weight: 5}).addTo(map);
 
       //marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-      marker.bindPopup("<b>Trails are all over Colorado Springs!</b> This one is a beautiful trail on a gravel path following a stream.").openPopup();
       marker2.bindPopup("This is a great trailhead. However, parking is very limited so go early!");
       circle.bindPopup("Here is one of the best views. You can see into the neighborhood below and see a great landscape of the city.");
       polygon.bindPopup("This is Pulpit Rock. With just a quick 15 minute hike, many people will have pizza delivered here!");
@@ -83,7 +80,7 @@
   
       var popup = L.popup()
         .setLatLng([38.929, -104.836])
-        .setContent("This is a test")
+        .setContent("<b>Trails are all over Colorado Springs!</b> This one is a beautiful trail on a gravel path following a stream.")
         .openOn(map);
 
       //This function will have an alert show in the form of a top of page large pop up box
