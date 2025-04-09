@@ -88,7 +88,7 @@
 		$.getJSON('https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_TRANS_RTDPARKNRIDE_P/FeatureServer/280/query?outFields=*&where=1%3D1&f=geojson', function(data) {
 			newLayer = L.geoJSON(data);
 			layerControl.addOverlay(newLayer, "RTD Park-N-Ride");
-		});
+		};
 
 
 	// end document ready
