@@ -70,7 +70,7 @@
 		console.log('map and basemaps created');
 
 		// let's add the Denver ACS data -- ##4 here
-		$.getJSON('./acs_denver_2021.geojson'), function(data) {
+		$.getJSON('https://github.com/rachelsadler/web_mapping/acs_denver_2021.geojson'), function(data) {
 			// convert geojson into a layer that can be added to map
 			acsDenver2021Layer = L.geoJSON(data).addTo(map);
 			console.log('data added to map');
