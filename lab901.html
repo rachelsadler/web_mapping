@@ -104,7 +104,7 @@
                                      { style: style1,
 				     onEachFeature: function(feature, layer) {
 					     var age = feature.properties.PCT_AGE65PLUS
-					     layer.bindPopup("Percent Over Age 65 : " + age.fixedTo(2) + "%");
+					     layer.bindPopup("Percent Over Age 65 : " + age.toFixed(2) + "%");
 				     }
 				     }).addTo(map);
 			console.log('data added to map');
