@@ -103,8 +103,8 @@
 			acsDenver2021Layer = L.geoJSON(data,
                                      { style: style1,
 				     onEachFeature: function(feature, layer) {
-					     var age = feature.properties.PCT_AGE65PLUS
-					     layer.bindPopup("Percent Over Age 65 : " + age.toFixed(2) + "%");
+					     var age = 
+					     layer.bindPopup("Percent Over Age 65 : " + Math.round(feature.properties.PCT_AGE65PLUS * 100)/100 + "%");
 				     }
 				     }).addTo(map);
 			console.log('data added to map');
