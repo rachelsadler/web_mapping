@@ -22,7 +22,7 @@
 		
 		h1 { color: #3293a8;
 		     font-family: "Garamond", serif;
-		     font-size: 20px;
+		     font-size: 26px;
 		     text-align: center;
 		    }
 		h2 {color: #3293a8;
@@ -54,7 +54,7 @@
 	$(document).ready(function() {
 
 		// let's create our basemap! -- ##1 here
-		map = L.map('map').setView([0,0], 10);
+		map = L.map('map').setView([0,0], 11);
 		
 		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -83,13 +83,12 @@
       answer =  d > 45 ? '#54278f' :
         d > 30 ? '#756bb1' :
         d > 20 ? '#9e9ac8' :
-        d > 15 ? '#bcbddc' : 
-	d > 9 ? '#dadaeb': '#f2f0f7';
+        d > 10 ? '#cbc9e2' :  '#f2f0f7';
 	    
         styleReturn =  {
           fillColor : answer,
           weight : 1,
-          opacity : 1,
+          opacity : 0.5,
           color : 'white',
           dashArray : '3',
           fillOpacity : 0.7
@@ -103,7 +102,6 @@
 			acsDenver2021Layer = L.geoJSON(data,
                                      { style: style1,
 				     onEachFeature: function(feature, layer) {
-					     var age = 
 					     layer.bindPopup("Percent Over Age 65 : " + Math.round(feature.properties.PCT_AGE65PLUS * 100)/100 + "%");
 				     }
 				     }).addTo(map);
