@@ -102,7 +102,7 @@
 			acsDenver2021Layer = L.geoJSON(data,
                                      { style: style1,
 				     onEachFeature: function(feature, layer) {
-					     layer.bindPopup("Percent Over Age 65 : " + feature.properties.PCT_AGE65PLUS + "%");
+					     layer.bindPopup("Percent Over Age 65 : " + feature.properties.PCT_AGE65PLUS.toFixed(2) + "%");
 				     }
 				     }).addTo(map);
 			console.log('data added to map');
@@ -137,7 +137,7 @@ $.getJSON('https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/OD
 
 <div id="header">
 	<h1>Percent of Population Over the Age of 65</h1>
-	<h2><a href="https://www.census.gov/programs-surveys/acs">Based on the 2021 American Community Survey</a></h1>
+	<h2><a href="https://www.census.gov/programs-surveys/acs">Denver 2021 American Community Survey (Census) data</a></h1>
 	<p>Data from <a href="https://opendata-geospatialdenver.hub.arcgis.com/maps/619c7f836b6e4188b0e0f0458aecba26">Denver Open Data Catalog</a></p>
 </div>
 <div id="map"></div>
