@@ -30,7 +30,8 @@
 		     font-size: 14px;
 		     text-align: center;
 		
-		p { font: serif 10px;
+		p { font-family: "Garamond", serif;
+		    font-size: 10px;
 		    color: #3293a8;
 		    text-align: center;
 		  }
@@ -102,7 +103,7 @@
 			acsDenver2021Layer = L.geoJSON(data,
                                      { style: style1,
 				     onEachFeature: function(feature, layer) {
-					     layer.bindPopup("Percent Over Age 65 : " + feature.properties.PCT_AGE65PLUS.toFixed(2) + "%");
+					     layer.bindPopup("Percent Over Age 65 : " + feature.properties.PCT_AGE65PLUS + "%");
 				     }
 				     }).addTo(map);
 			console.log('data added to map');
