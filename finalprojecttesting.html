@@ -95,10 +95,10 @@
     // define a function to style my choropleth map
     function style1 (feature) {
       d = feature.properties.F_TOTAL;
-	answer = d > 45 ? '#54278F' : 
-		d > 30 ? '#756BB1' : 
-		d > 20 ? '#9E9AC8' : 
-		d > 10 ? '#CBC9E2' : 
+	answer = d > 5 ? '#54278F' : 
+		d > 3 ? '#756BB1' : 
+		d > 2 ? '#9E9AC8' : 
+		d > 1 ? '#CBC9E2' : 
 		'#F2F0F7';
 	styleReturn = {
 		fillColor : answer,
