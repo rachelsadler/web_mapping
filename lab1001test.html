@@ -85,14 +85,11 @@
     // define a function to style my choropleth map
     function style1 (feature) {
       d = feature.properties.PCT_AGE65Plus;
-	answer = d > 30 ? '#800026' : 
-		d > 20 ? '#DB0026' : 
-		d > 15 ? '#E31A1C' : 
-		d > 10 ? '#FC4E2A' : 
-		d > 5 ? '#FD8D3C' : 
-		d > 3 ? '#FEB24C' : 
-		d > 1 ? '#FED976' : 
-		'#FFEDA0';
+	answer = d > 45 ? '#54278F' : 
+		d > 30 ? '#756BB1' : 
+		d > 20 ? '#9E9AC8' : 
+		d > 10 ? '#CBC9E2' : 
+		'#F2F0F7';
 	styleReturn = {
 		fillColor : answer,
 		weight : 1,
@@ -129,8 +126,11 @@
     var legend = L.control({position: 'bottomright'});
     legend.onAdd = function(map) {
       var div = L.DomUtil.create('div', 'info legend');
-      colors = ['#FFEDA0','#FED976','#FEB24C' ,'#FD8D3C','#FC4E2A','#E31A1C', '#BD0026','#800026'];
-      labels = ['0 - 1%', '1 - 3%', '3 - 5%', '5 - 10%', '10 - 15%', '15 - 20%', '20 - 30%','30%+'];
+      colors = ['#F2F0F7','#CBC9E2','#9E9AC8', '#756BB1','#54278F'];
+      labels = ['0 - 10%', '10 - 20%', '20 - 30%', '30 - 45%','45%+'];
+	    //console.log('labels defined');
+	    //colors = ['#FFEDA0','#FED976','#FEB24C' ,'#FD8D3C','#FC4E2A','#E31A1C', '#BD0026','#800026'];
+      //labels = ['0 - 1%', '1 - 3%', '3 - 5%', '5 - 10%', '10 - 15%', '15 - 20%', '20 - 30%','30%+'];
       div.innerHTML = '<h3>% Poverty</h3>';
 
       for (var i = 0; i < colors.length; i++) {
