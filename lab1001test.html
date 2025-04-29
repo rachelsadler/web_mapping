@@ -84,7 +84,7 @@
 
     // define a function to style my choropleth map
     function style1 (feature) {
-      d = feature.properties.PCT_AGE65Plus;
+      d = feature.properties.PCT_AGE65PLUS;
 	answer = d > 45 ? '#54278F' : 
 		d > 30 ? '#756BB1' : 
 		d > 20 ? '#9E9AC8' : 
@@ -107,7 +107,7 @@
 			acsDenver2021Layer = L.geoJSON(data, 
                                      {style:style1, 
 				     onEachFeature: function(feature, layer) {
-					     layer.bindPopup("Percent Poverty: " + feature.properties.PCT_POVERTY + "%");
+					     layer.bindPopup("Percent Poverty: " + feature.properties.PCT_AGE65PLUS + "%");
 				     }}).addTo(map);
 
 			// move the map to the area of the data
@@ -131,7 +131,7 @@
 	    //console.log('labels defined');
 	    //colors = ['#FFEDA0','#FED976','#FEB24C' ,'#FD8D3C','#FC4E2A','#E31A1C', '#BD0026','#800026'];
       //labels = ['0 - 1%', '1 - 3%', '3 - 5%', '5 - 10%', '10 - 15%', '15 - 20%', '20 - 30%','30%+'];
-      div.innerHTML = '<h3>% Poverty</h3>';
+      div.innerHTML = '<h3>% Age</h3>';
 
       for (var i = 0; i < colors.length; i++) {
         div.innerHTML += '<i style="background:' + colors[i] + '"></i> ' + labels[i] + '<br>';
