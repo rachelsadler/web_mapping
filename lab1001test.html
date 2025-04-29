@@ -23,16 +23,19 @@
 		h1 { color: #3293a8;
 		     font-family: "Garamond", serif;
 		     font-size: 20px;
+		     text-align: center;
 		    }
 		
 		p { font: serif 10px;
 		    color: #3293a8;
+		    text-align: center;
 		  }
 		
 		#header {
 			width: 100%;
 			margin: auto;
 			align: center;
+			text-align: center;
 		}
 		
 		a { text-decoration: none; color: inherit; }
@@ -60,7 +63,7 @@
 	$(document).ready(function() {
 
 		// let's create our basemap! -- ##1 here
-		map = L.map('map').setView([0, 0], 10);
+		map = L.map('map').setView([0, 0], 11);
 		
 		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -94,9 +97,9 @@
 		fillColor : answer,
 		weight : 1,
 		opacity	: 1,
-		color : 'white',
+		color : 'gray',
 		dashArray : '3',
-		fillOpacity : 0.7
+		fillOpacity : 0.8
 	};
 	return styleReturn;
     }
@@ -107,7 +110,7 @@
 			acsDenver2021Layer = L.geoJSON(data, 
                                      {style:style1, 
 				     onEachFeature: function(feature, layer) {
-					     layer.bindPopup("Percent Poverty: " + feature.properties.PCT_AGE65PLUS + "%");
+					     layer.bindPopup("Percent Over Age 65: " + Math.round(feature.properties.PCT_AGE65PLUS *100)/100 + "%");
 				     }}).addTo(map);
 
 			// move the map to the area of the data
