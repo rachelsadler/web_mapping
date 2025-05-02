@@ -114,17 +114,17 @@
 		// let's add the Denver ACS data -- ##4 here
 		$.getJSON('./SVI2022_COLORADO_COUNTY.geojson', function(data) {
 			// covert the file into a layer
-			acsDenver2021Layer = L.geoJSON(data, 
+			coloradoSVILayer = L.geoJSON(data, 
                                      {style:style1, 
 				     onEachFeature: function(feature, layer) {
-					     layer.bindPopup("County: "+ feature.properties_COUNTY + "</br" +"SVI: " + feature.properties.F_TOTAL);
+					     layer.bindPopup("County: "+ feature.properties_COUNTY + "<br/>" +"SVI: " + feature.properties.F_TOTAL);
 				     }}).addTo(map);
 
 			// move the map to the area of the data
-			map.panTo(acsDenver2021Layer.getBounds().getCenter());
+			map.panTo(coloradoSVILayer.getBounds().getCenter());
 
 			// add the layer to the layercontrol
-			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
+			layerControl.addOverlay(coloradoSVILayer, "SVI 2022");
 		});
 
 
