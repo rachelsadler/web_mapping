@@ -146,6 +146,21 @@
 
     legend.addTo(map);
 
+		//button to show maps
+	$("#showButton").click( function(){
+          console.log("someone clicked showButton.");
+          
+          $("garfieldCode.png").show();
+	  $("garfieldReprojectCode.png").show();
+        });
+        
+        $("#hideButton").click( function(){
+          console.log("someone clicked hideButton.");
+          
+          $("garfieldCode.png").hide();
+	  $("garfieldReprojectCode.png").hide();
+        });
+
 	// end document ready
 	});
 
@@ -157,9 +172,36 @@
 <div id="header">
 	<h1>Colorado Social Vulnerability Index</h1>
 	<h2><a href="https://www.atsdr.cdc.gov/place-health/php/svi/svi-data-documentation-download.html">Social Vulnerability Index data</a></h2>
+	<p>Social vulnerability refers to the demographic and socioeconomic factors (such as poverty, lack of access to transportation, and crowded housing) that adversely affect communities that encounter hazards and other community-level stressors. These stressors can include natural or human-caused disasters (such as tornadoes or chemical spills) or disease outbreaks (such as COVID-19).</p>
+	<p>Below is the Social Vulnerability Index (SVI) for the counties in Colorado.</p>
 </div>
 <div id="map"></div>
-
+<div>
+	<p>Take a closer look at Garfield County, CO.</p>
+	<p>Here is where the Grizzly Creek Fire happened in 2020. The fire boundary is outlined in dark blue.</p>
+	<img src="garfieldSVIMap.png" alt="Map of Social Vulnerability Index in Garfield County, Colorado.">
+	<p>The SVI is based on 4 themes: Socioeconomic, household composition/disability, Minority status and language, and finally housing type and transportation. We have some examples of specific factors collected through the Census. The numbers in bold represent values for Garfield County, where the fire occurred. </p>
+	<h3>Stats</h3>
+	<p>The wording of these statics is taken directly from the U.S. Census and may not fully encompass personal identities</p>
+	<ul>
+		<li>Below 150% poverty line <b>23.2%</b></li>
+		<li>Mobile homes and housing with more than 10 units <b>40.3%</b></li>
+		<li>Persons living with a disability <b>14.8%</b></li>
+		<li>Persons 5+ years who speak English less than well <b>4.7%</b></li>
+		<li>Persons who are racial and/or ethnic minorities <b>34.6%</b></li>
+		<ul>
+			<li>Hispanic or Latino <b>29.5%</b></li>
+		</ul>
+		<li>Persons under age 17 <b>44.1%</b></li>
+	</ul>
+</div>
+<div>
+	<button id="showButon">Click to show the code for the map of Garfield County</button>
+	<button id="hideButon">Click to hide the code</button>
+	<img src="garfieldCode.png" alt="Python code for creating map.">
+	<img src="garfieldReprojectCode.png" alt="Python code for reprojecting map.">
+		
+</div>
 
 </body>
 </html>
