@@ -150,15 +150,13 @@
 	$("#showButton").click( function(){
           console.log("someone clicked showButton.");
           
-          $("garfieldCode.png").show();
-	  $("garfieldReprojectCode.png").show();
+          $("garfieldCode.png", "garfieldReprojectCode.png").show();
         });
         
         $("#hideButton").click( function(){
           console.log("someone clicked hideButton.");
           
-          $("garfieldCode.png").hide();
-	  $("garfieldReprojectCode.png").hide();
+          $("garfieldCode.png", "garfieldReprojectCode.png").hide();
         });
 
 	// end document ready
