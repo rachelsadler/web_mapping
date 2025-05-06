@@ -146,17 +146,16 @@
 
     legend.addTo(map);
 
-		//button to show maps
-	$("#showButton").click( function(){
-          console.log("someone clicked showButton.");
-          
-          $("garfieldCode.png", "garfieldReprojectCode.png").show();
-        });
+	// toggle the photo on and off
+      $("#showButton").click(function() {
+        console.log("clicked on the toggle photo button");
+        $("#garfieldCode").fadeToggle(1000, "linear");
+      });
         
         $("#hideButton").click( function(){
           console.log("someone clicked hideButton.");
           
-          $("garfieldCode.png", "garfieldReprojectCode.png").hide();
+          $("#garfieldReprojectCode.png").fadeToggle(1000, "linear");
         });
 
 	// end document ready
@@ -196,8 +195,8 @@
 <div>
 	<button id="showButon">Click to show the code for the map of Garfield County</button>
 	<button id="hideButon">Click to hide the code</button>
-	<img src="garfieldCode.png" alt="Python code for creating map.">
-	<img src="garfieldReprojectCode.png" alt="Python code for reprojecting map.">
+	<img id="garfieldCode" src="garfieldCode.png" alt="Python code for creating map.">
+	<img id ="garfieldReprojectCode" src="garfieldReprojectCode.png" alt="Python code for reprojecting map.">
 		
 </div>
 
