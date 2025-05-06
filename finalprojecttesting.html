@@ -11,7 +11,6 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-
 	<style>
 		html, body {
 			height: 100%;
@@ -46,6 +45,22 @@
 		
 		a { text-decoration: none; color: inherit; }
 
+		#garfieldCode{
+			height: auto;
+			width: 150px;
+      			padding: 5px;
+      			display: block;
+      			margin: auto;
+		}
+
+		#garfieldReprojectCode{
+			height: auto;
+			width: 150px;
+      			padding: 5px;
+      			display: block;
+      			margin: auto;
+		}
+
     .legend {
       line-height: 18px;
       color: #555;
@@ -67,6 +82,17 @@
 	// to make sure that everything loads in the 
 	// right order
 	$(document).ready(function() {
+
+		// toggle the photo on and off
+      	$("#showButton").click(function() {
+        	console.log("clicked on the toggle photo button");
+        	$("#garfieldCode").fadeToggle(1000, "linear");
+      	});
+        
+        $("#hideButton").click( function(){
+        	console.log("someone clicked hideButton.");
+          	$("#garfieldReprojectCode.png").fadeToggle(1000, "linear");
+        });
 
 		// let's create our basemap! -- ##1 here
 		map = L.map('map').setView([0, 0], 7);
@@ -145,18 +171,6 @@
     };
 
     legend.addTo(map);
-
-	// toggle the photo on and off
-      $("#showButton").click(function() {
-        console.log("clicked on the toggle photo button");
-        $("#garfieldCode").fadeToggle(1000, "linear");
-      });
-        
-        $("#hideButton").click( function(){
-          console.log("someone clicked hideButton.");
-          
-          $("#garfieldReprojectCode.png").fadeToggle(1000, "linear");
-        });
 
 	// end document ready
 	});
