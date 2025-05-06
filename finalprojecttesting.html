@@ -57,6 +57,7 @@
 		height: auto;
 		width: 500px;
 		padding: 5px;
+		padding-top: 30px;
 		margin: 40px;
 		float: left;
 	}
@@ -88,7 +89,7 @@
 		// toggle the photo on and off
         $("#toggleButton").click( function(){
         	console.log("someone clicked toggle Button.");
-          	$("#garfieldCode").fadeToggle(1000, "linear");
+          	$("#garfieldCode", "#garfieldReprojectCode").fadeToggle(100, "linear");
         });
 
 	// let's create our basemap! -- ##1 here
