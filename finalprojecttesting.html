@@ -63,6 +63,7 @@
 	}
 	.clear{
 		clear: left;
+		width: 80%;
 	}
 	.legend {
 		line-height: 18px;
@@ -79,6 +80,10 @@
 	}
 	#toggleButton {
 		align: center;
+	}
+	#stats{
+		width: 80%;
+		text-align: center;
 	}
 	</style>
 
@@ -184,7 +189,7 @@
 	<p>Below is the Social Vulnerability Index (SVI) for the counties in Colorado.</p>
 </div>
 <div id="map"></div>
-<div>
+<div id="stats">
 	<p>Take a closer look at Garfield County, CO.</p>
 	<p>Here is where the Grizzly Creek Fire happened in 2020. The fire boundary is outlined in dark blue.</p>
 	<img src="garfieldSVIMap.png" alt="Map of Social Vulnerability Index in Garfield County, Colorado.">
@@ -203,14 +208,14 @@
 		<li>Persons under age 17 <b>44.1%</b></li>
 	</ul>
 </div>
+	
+<div class="clear">
+	<button id="toggleButton">Click to toggle visibility of the code</button>	
+</div>
+	
 <div id="codePhotos">
 	<img id="garfieldCode" src="garfieldCode.png" alt="Python code for creating map."/>
 	<img id="garfieldReprojectCode" src="garfieldReprojectCode.png" alt="Python code for reprojecting map."/>
 </div>
-<div class="clear">
-	<button id="toggleButton">Click to toggle visibility of the code</button>
-		
-</div>
-
 </body>
 </html>
