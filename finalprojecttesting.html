@@ -241,7 +241,7 @@
 </div>
 <div id="map"></div>
 <div id="intro">
-	<p>Take a closer look at Garfield County, CO where the Grizzly Creek Fire happened in 2020. The fire boundary is outlined in dark blue and census tracts are outlined in gray.</p>
+	<p>Take a closer look at Garfield County, CO where the Grizzly Creek Fire happened in 2020. The fire boundary is outlined in black and census tracts are outlined in gray.</p>
 	<p>The Social Vulnerability Index takes about 30 different factors and creates a weighted scale to help visualize who is potentially more vulnerable during human-caused and natural disasters. It is shown as a relative index from 0 to 4 for Garfield County.</p>
 	<p>This weighted scale is based on 4 themes: Socioeconomic, household composition/disability, Minority status and language, and finally housing type and transportation. We have some examples of specific factors collected through the Census in a table below.</p>
 </div>
@@ -250,7 +250,7 @@
 	<img src="garfieldSVIMap.png" alt="Map of Social Vulnerability Index in Garfield County, Colorado.">
 </div>
 <div>
-	<p class="clear">Below is some code that downloads the SVI for Colorado, selects just Garfield County, connects this data to county boundaries, and plots the SVI based on the final totaled index. In this map the fire boundary is shown in blue. Each colored area with a border is a census tract.</p>
+	<p class="clear">Below is some code that downloads the SVI for Colorado, selects just Garfield County, connects this data to county boundaries, and plots the SVI based on the final totaled index. This code also includes a reprojection of the data from WGS 1984 to UTM Zone 13N.</p>
 </div>
 	
 <div class="clear">
