@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<base target="_top">
+	<!--<base target="_top">
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<meta charset="utf-8" />
+  	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  
 	<title>Final Project - Social Vulnerability Index Data</title>
+
 	
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@3.0.16/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet-vector@4.2.8/dist/esri-leaflet-vector.js"></script>
+
 <style>
 	html, body {
 		height: 100%;
 		margin: 0;
+		padding: 0;
 	}
 	
 	#map {
-		width:100%; height: 70%; }
+		width:100%; 
+		height: 70%;
+		position: absolute;
+      		top: 0;
+     		bottom: 0;
+     		right: 0;
+      		left: 0;
+      		font-family: Arial, Helvetica, sans-serif;
+      		font-size: 14px;
+      		color: #323232;
+	}
 		
 	h1 {
 		color: #3293a8;
@@ -142,6 +160,11 @@
 
 	// let's create our basemap! -- ##1 here
 	map = L.map('map').setView([0, 0], 7);
+
+	const basemapEnum = "arcgis/streets";
+	L.esri.Vector.vectorBasemapLayer(basemapEnum, {
+		maxZoom:19
+	}).addTo(map);
 	
 	// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 	var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -156,7 +179,8 @@
 		attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'});
 
 	// this is an object to keep track of our three basemaps -- ##2 here
-	var baseMaps = {"OpenStreetMap" : OSMTiles,
+	var baseMaps = {"EsriStreetMap" : basemapEnum,
+			"OpenStreetMap" : OSMTiles,
 		       "Humanitarian OSM" : HOTOSMTiles,
 		       "OpenTopoMap" : OpenTopoMap};
 
