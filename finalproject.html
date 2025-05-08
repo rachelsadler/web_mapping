@@ -182,11 +182,11 @@
 	// define a function to style my choropleth map
 	function style1 (feature) {
 		d = feature.properties.F_TOTAL;
-		answer = d > 5 ? '#0868ac' : 
-			d > 4 ? '#43a2ca' : 
-			d > 3 ? '#7bccc4' : 
-			d > 2 ? '#a8ddb5' : 
-			d > 1 ? '#ccebc5' : '#f0f9e8';
+		answer = d > 5 ? '#0868AC' : 
+			d > 4 ? '#43A2CA' : 
+			d > 3 ? '#7BCCC4' : 
+			d > 2 ? '#A8DDB5' : 
+			d >= 1 ? '#CCEBC5' : '#F0F9E8';
 	styleReturn = {
 		fillColor : answer,
 		weight : 1,
@@ -218,7 +218,7 @@
 	var legend = L.control({position: 'bottomright'});
 	legend.onAdd = function(map) {
 		var div = L.DomUtil.create('div', 'info legend');
-		colors = ['#f0f9e8','#ccebc5','#a8ddb5', '#7bccc4', '#43a2ca', '#0868ac'];
+		colors = ['#F0F9E8','#CCEBC5','#A8DDB5', '#7BCCC4', '#43A2CA', '#0868AC'];
 		labels = ['0', '1', '2', '3', '4', '5+'];
 		div.innerHTML = '<h3>SVI</h3>';
 	
